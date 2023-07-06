@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Produto {
+public class Comanda {
     private int codigo;
     private String nome;
-    private double valor;
+    private int mesa;
 }

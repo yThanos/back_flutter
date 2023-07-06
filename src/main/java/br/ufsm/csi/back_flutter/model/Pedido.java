@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Produto {
+public class Pedido {
     private int codigo;
-    private String nome;
-    private double valor;
+    private int codigoComanda;
+    private int codigoProduto;
+    private int quantidade;
 }

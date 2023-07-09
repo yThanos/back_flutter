@@ -9,7 +9,7 @@ public class ConectaDB {
     private static final String USER = "postgres";
     private static final String PASSWORD = "1234";
 
-    public static Connection getConexao() throws SQLException {
+    public Connection getConexao() throws SQLException {
         Connection conexao = DriverManager.getConnection(URL, USER, PASSWORD);
         return conexao;
     }

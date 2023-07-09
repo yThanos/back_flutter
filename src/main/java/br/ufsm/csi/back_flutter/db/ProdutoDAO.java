@@ -14,7 +14,7 @@ public class ProdutoDAO {
 
     public ArrayList<Produto> getProdutos(){
         ArrayList<Produto> produtos = new ArrayList<Produto>();
-        try(Connection connection = ConectaDB.getConexao()){
+        try(Connection connection = new ConectaDB().getConexao()){
             this.sql = "SELECT * FROM produto";
             this.preparedStatement = connection.prepareStatement(this.sql);
             this.resultSet = this.preparedStatement.executeQuery();
@@ -33,7 +33,7 @@ public class ProdutoDAO {
     }
 
     public void addProduto(Produto produto){
-        try(Connection connection = ConectaDB.getConexao()){
+        try(Connection connection = new ConectaDB().getConexao()){
             this.sql = "INSERT INTO produto (nome, valor) VALUES (?, ?)";
             this.preparedStatement = connection.prepareStatement(this.sql);
             this.preparedStatement.setString(1, produto.getNome());
@@ -46,7 +46,7 @@ public class ProdutoDAO {
 
     public Produto getById(int id){
         Produto produto = null;
-        try(Connection connection = ConectaDB.getConexao()){
+        try(Connection connection = new ConectaDB().getConexao()){
             this.sql = "SELECT * FROM produto WHERE codigo = ?";
             this.preparedStatement = connection.prepareStatement(this.sql);
             this.preparedStatement.setInt(1, id);
